@@ -5,9 +5,14 @@ var kataKedua = "senang";
 var kataKetiga = "belajar";
 var kataKeempat = "javascript";
 
-var fin = `${kataPertama} ${kataKedua[0]
-  .toUpperCase()
-  .concat(kataKedua.substring(1))} ${kataKetiga} ${kataKeempat.toUpperCase()}`;
+var fin =
+  kataPertama +
+  " " +
+  kataKedua[0].toUpperCase().concat(kataKedua.substr(1)) +
+  " " +
+  kataKetiga +
+  " " +
+  kataKeempat.toUpperCase();
 
 console.log("Tugas 1");
 console.log(fin + "\n");
@@ -19,14 +24,17 @@ var kataKedua = "2";
 var kataKetiga = "4";
 var kataKeempat = "5";
 
-var int1 = parseInt(kataPertama);
-var int2 = parseInt(kataKedua);
-var int3 = parseInt(kataKetiga);
-var int4 = parseInt(kataKeempat);
-var fin = int1 + int2 + int3 + int4;
-
 console.log("Tugas 2");
-console.log(`${int1} + ${int2} + ${int3} + ${int4} = ` + fin + "\n");
+console.log(
+  parseInt(kataPertama) +
+    " + " +
+    parseInt(kataKedua) +
+    " + " +
+    parseInt(kataKetiga) +
+    " + " +
+    parseInt(kataKeempat) +
+    "\n"
+);
 
 // -------------------------- Soal 3 --------------------------
 
@@ -107,4 +115,4 @@ switch (bulan) {
   default:
 }
 console.log("\nTugas 5");
-console.log(`${tanggal} ${bulan} ${tahun}`);
+console.log(tanggal + " " + bulan + " " + tahun);
