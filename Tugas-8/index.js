@@ -7,6 +7,8 @@ var books = [
   { name: "komik", timeSpent: 1000 },
 ];
 
+var i = 0;
+
 readBooks(10000, books[0], (time) => {
   readBooks(time, books[1], (time) => {
     readBooks(time, books[2], (time) => {
@@ -14,3 +16,15 @@ readBooks(10000, books[0], (time) => {
     });
   });
 });
+
+// Recursive
+// function book(time, books) {
+
+//   readBooks(time, books[i], function (get) {
+//     i++;
+//     if (books[i] != undefined) {
+//       book(get, books);
+//     }
+//   });
+// }
+// book(10000, books);
