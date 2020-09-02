@@ -9,22 +9,22 @@ var books = [
 
 var i = 0;
 
-readBooks(10000, books[0], (time) => {
-  readBooks(time, books[1], (time) => {
-    readBooks(time, books[2], (time) => {
-      readBooks(time, books[3], (e) => readBooks);
-    });
-  });
-});
-
 // Recursive
-// function book(time, books) {
+function book(time, books) {
+  readBooks(time, books[i], function (get) {
+    i++;
+    if (books[i] != undefined) {
+      book(get, books);
+    }
+  });
+}
+book(10000, books);
 
-//   readBooks(time, books[i], function (get) {
-//     i++;
-//     if (books[i] != undefined) {
-//       book(get, books);
-//     }
+// Callback Hell
+// readBooks(10000, books[0], (time) => {
+//   readBooks(time, books[1], (time) => {
+//     readBooks(time, books[2], (time) => {
+//       readBooks(time, books[3], (e) => readBooks);
+//     });
 //   });
-// }
-// book(10000, books);
+// });
