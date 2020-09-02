@@ -10,13 +10,15 @@ var books = [
 var i = 0;
 
 function book(time) {
-  if (i < books.length) {
+  if (i < books.length && time >= 0) {
     i++;
-    readBooksPromise(time, books[i - 1]).then((time) => book(time));
+    readBooksPromise(time, books[i - 1])
+      .then((time) => book(time))
+      .catch((time) => console.log("Sisa: " + time));
   }
 }
 
-book(10000);
+book(9000);
 
 // readBooksPromise(10000, books[0])
 //   .then((time) => readBooksPromise(time, books[1]))
